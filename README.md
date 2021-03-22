@@ -11,7 +11,7 @@
 This UI is currently heavily inspired by [typings.gg](typings.gg).
 This will change in the future.
 
-[Live on Heroku](https://finger-chips.herokuapp.com/ "Live on Heroku")
+[Live on Heroku](https://fingerchips.herokuapp.com/ "Live on Heroku")
 
 ------------
 
