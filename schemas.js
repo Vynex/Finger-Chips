@@ -1,21 +1,15 @@
 import Joi from 'joi';
 
 export const userSchema = Joi.object({
-	username: Joi
-      .string()
-      .alphanum()
-      .min(5)
-      .max(30)
-      .required(),
-      
-   email: Joi
-      .string()
-      .email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } }),
+	username: Joi.string().alphanum().min(5).max(30).required(),
 
-	password: Joi
-      .string()
-      .pattern(new RegExp('^[a-zA-Z0-9]{6,30}$')),
+	email: Joi.string().email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } }),
 
-	repeat_password: Joi
-      .ref('password'),
+	password: Joi.string().pattern(
+		new RegExp(
+			'^(?:(?=.*?[A-Z])(?:(?=.*?[0-9])(?=.*?[-!@#$%^&*()_[]{},.<>+=])|(?=.*?[a-z])(?:(?=.*?[0-9])|(?=.*?[-!@#$%^&*()_[]{},.<>+=])))|(?=.*?[a-z])(?=.*?[0-9])(?=.*?[-!@#$%^&*()_[]{},.<>+=]))[A-Za-z0-9!@#$%^&*()_[]{},.<>+=-]{6,30}$'
+		)
+	),
+
+	repeat_password: Joi.ref('password'),
 });
