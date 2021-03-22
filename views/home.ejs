@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>finger-chips</title>
+
+   <link rel="stylesheet" href="/stylesheets/style.css">
+   <link rel="stylesheet" href="/stylesheets/test.css">
+   <script src="/javascripts/app.js" defer></script>
+   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" defer></script>
+</head>
+<body>
+   <header>
+      <div class="title">finger chips</div>
+   </header>
+
+   <main>
+      <div class="controls">
+         <span class="control-start">
+            <span class="control">10</span> / 
+            <span class="control">25</span> / 
+            <span class="control selected-count">50</span> / 
+            <span class="control">100</span> /
+            <span class="control">250</span>
+         </span>
+         <span class="control-mid">Esc to Restart</span>
+         <span class="control-end">WPM: XX / ACC: XX</span>
+      </div>
+      <section class="container">
+         <div class="words">
+
+         </div>
+
+         <div class="input">
+            <input type="text" class="field" autofocus>
+         </div>
+      </section>
+      <div class="details">
+         <span class="result-start">
+            <span class="time-taken"></span> |
+            <span class="keystrokes"></span> |
+            <span class="corrections"></span>
+         </span>
+         <span class="result-end">
+            <span class="correct-words"></span> |
+            <span class="incorrect-words"></span>
+         </span>
+      </div>
+   </main>
+
+   <footer>
+      <div>
+         <% let log = !currentUser ? 'login' : 'profile' %>
+
+         <span>&#60; guide</span> / <a href="/<%= log %>"><%= log %> &#62;</a>
+      </div>
+   </footer>
+
+   <% if (currentUser) {%>
+      <script>
+         const user = '<%- currentUser.id %>';
+      </script>
+   <% } else { %>
+      <script>
+         const user = null;
+      </script>
+   <% } %>
+</body>
+</html>

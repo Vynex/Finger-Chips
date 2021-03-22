@@ -1,0 +1,64 @@
+main {
+   flex: 1;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   width: 55%;
+   margin: 0 auto;
+}
+
+.container {
+   border-radius: 0.3em;
+   background-color: #44475A;
+   padding: 0.5em 2em;
+}
+
+label {
+   display: block;
+   margin-top: 0.4em;
+}
+
+.field {
+   border-radius: 0.2em;
+
+   padding: .8em;
+   height: 2em;
+   width: 100%;
+   margin-bottom: 0.4em;
+
+   background-color: #282A36;
+   border: none;
+   color: white;
+   font: inherit;
+}
+
+input:invalid {
+   background-color: #6B3D4D;
+}
+
+.auth-btn {
+   margin-top: 0.8em;
+   margin-bottom: 0.3em;
+   border: none;
+   padding: 0.2em 0.7em;
+   border-radius: 0.2rem;
+   font-size: 1.2rem;
+
+   background-color: #282A36;
+   color: #BB92E4;
+
+   font: inherit;
+   font-size: inherit;
+   cursor: pointer;
+}
+
+.container-bottom {
+   font-size: 0.9em;
+   display: flex;
+   justify-content: flex-end;
+   color: #FF79C6;
+}
+
+.container-bottom>a {
+   margin: 0 0.3em;
+}

@@ -1,0 +1,34 @@
+main {
+   flex: 1;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   margin: 0 auto;
+}
+
+.container {
+   border-radius: 0.3em;
+   padding: 1em;
+   display: inline-block;
+   background-color: #44475A;
+   position: relative;
+   width: 55vw;
+}
+
+.controls {
+   display: flex;
+   justify-content: space-between;
+   margin: 0.8em 1em;
+}
+
+.selected-count {
+   border-bottom: 1px solid;
+}
+
+.control-start {
+   color: #8BE9FD;
+}
+
+.control {
+   cursor: pointer;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>finger-chips</title>
+
+   <link rel="stylesheet" href="/stylesheets/style.css">
+   <link rel="stylesheet" href="/stylesheets/auth.css">
+   <script src="/javascripts/validate.js" defer></script>
+</head>
+<body>
+   <header>
+      <div class="title">finger chips / register</div>
+   </header>
+
+   <main>
+      <div class="container">
+         <form action="/register" method="POST" novalidate>
+            <label for="username">username</label>
+            <input type="text" class="field" id="username" name="username" minlength="5" maxlength="30" />
+
+            <label for="email">email</label>
+            <input type="email" class="field" id="email" name="email" />
+
+            <label for="password">password</label>
+            <input type="password" class="field" id="password" name="password" pattern="^[a-zA-Z0-9]{6,30}$" />
+
+            <label for="repeat-password">repeat password</label>
+            <input type="password" class="field" id="repeat-password" name="repeat_password" />
+
+            <button class="auth-btn">register</button>
+         </form>
+      </div>
+      <div class="container-bottom">
+         <a href="/login">login?</a>
+      </div>
+   </main>
+
+   <footer>
+      <div>
+         <a href="/">&#60; back &#62;</a>
+      </div>
+   </footer>
+</body>
+</html>
