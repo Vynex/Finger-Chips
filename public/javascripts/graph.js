@@ -41,7 +41,7 @@ const options = {
 				colors: ['#F8F8F2'],
 			},
 		},
-		min: 50,
+		// min: 50,
 	},
 	grid: {
 		show: false,
