@@ -2,7 +2,7 @@ const controls = document.querySelectorAll('.control');
 
 let wordCount = 50;
 
-// Creating an Empty Graph
+// Generating an Empty Graph
 const options = {
 	series: [],
 	chart: {
@@ -41,7 +41,7 @@ const options = {
 				colors: ['#F8F8F2'],
 			},
 		},
-		// min: 50,
+		min: 20,
 	},
 	grid: {
 		show: false,
@@ -58,7 +58,7 @@ const options = {
 const chart = new ApexCharts(document.querySelector('#history'), options);
 chart.render();
 
-
+// Updating wordCount
 for (let control of controls) {
 	control.addEventListener('click', () => {
 		wordCount = Number(control.textContent);
@@ -69,7 +69,7 @@ for (let control of controls) {
 	});
 }
 
-// Called on every Fetch
+// Called with every Fetch
 const updateGraph = (data) => {
 	const dateStrings = data.map((x) => x.createdAt);
 
@@ -103,7 +103,7 @@ const updateGraph = (data) => {
 	});
 };
 
-// Fetch Data from API
+// Fetch Data when wordCount Changes
 const initialise = async (wordCount) => {
 	const res = await fetch(
 		'/profile/results?' + new URLSearchParams({ wordCount: wordCount }),

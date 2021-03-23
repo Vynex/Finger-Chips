@@ -3,7 +3,7 @@ const router = express.Router({ mergeParams: true });
 
 import { isLoggedIn, ownsResult } from '../middleware.js';
 import catchAsync from '../utils/CatchAsync.js';
-import { create, destroy, showData, renderProfile } from '../controllers/result.js';
+import { create, destroy, showData, renderProfile } from '../controllers/profile.js';
 
 router.route('/')
    .get(renderProfile)

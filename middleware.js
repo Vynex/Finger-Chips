@@ -20,7 +20,6 @@ export async function validateRegistration(req, res, next) {
 	}
 }
 
-// Change to ownsResult
 export async function ownsResult(req, res, next) {
 	const { id, rid } = req.params;
 	const result = await _findById(rid);

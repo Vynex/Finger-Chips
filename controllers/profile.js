@@ -36,7 +36,7 @@ export async function showData(req, res) {
 
 export function renderProfile(req, res) {
 	if (req.user)
-		res.render('profile');
+		res.render('profile/graph');
 	else
 		res.redirect('/login');
 }
