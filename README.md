@@ -1,7 +1,7 @@
-# Finger-Chips
+# finger chips
 
 
-FingerChips is a modern website for taking and recording Typing Tests. 
+'finger chips' is a modern website for taking and recording Typing Tests. 
 
 ![Landing](https://i.imgur.com/EtWrfDD.png)
 
