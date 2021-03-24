@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,29 +10,30 @@
    <link rel="stylesheet" href="/stylesheets/style.css">
    <link rel="stylesheet" href="/stylesheets/profile.css">
 
-   <script src="https://cdn.jsdelivr.net/npm/apexcharts" defer></script>
-   <script src="/javascripts/graph.js" defer></script>
+   <script src="/javascripts/history.js" defer></script>
 </head>
+
 <body>
    <header>
-      <div class="title">finger chips / profile</div>
+      <div class="title">finger chips / history</div>
    </header>
 
    <main>
       <div class="controls">
          <span class="control-start">
-            <span class="control">10</span> / 
-            <span class="control">25</span> / 
-            <span class="control selected-count">50</span> / 
+            <span class="control">10</span> /
+            <span class="control">25</span> /
+            <span class="control selected-count">50</span> /
             <span class="control">100</span> /
             <span class="control">250</span>
          </span>
       </div>
       <div class="container">
-         <div id="history"></div>
-      </div>
-      <div class="container-bottom">
-         <a href="/profile/history">history</a>
+         <ul class="history">
+
+         </ul>
+         
+         <button id="delete">delete</button>
       </div>
    </main>
 
@@ -39,18 +41,19 @@
       <div>
          <% let log = !currentUser ? 'login' : 'logout' %>
 
-         <a href="/">&#60; back</a> / <a href="/<%= log %>"><%= log %> &#62;</a>
+         <a href="/profile">&#60; back</a> / <a href="/<%= log %>"><%= log %> &#62;</a>
       </div>
    </footer>
 
    <% if (currentUser) {%>
-      <script>
-         const user = '<%- currentUser.id %>';
-      </script>
+   <script>
+      const user = '<%- currentUser.id %>';
+   </script>
    <% } else { %>
-      <script>
-         const user = null;
-      </script>
+   <script>
+      const user = null;
+   </script>
    <% } %>
 </body>
+
 </html>

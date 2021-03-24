@@ -1,3 +1,4 @@
+import Result from './models/result.js';
 import { userSchema } from './schemas.js';
 import HandledError from './utils/HandledError.js';
 
@@ -21,11 +22,12 @@ export async function validateRegistration(req, res, next) {
 }
 
 export async function ownsResult(req, res, next) {
-	const { id, rid } = req.params;
-	const result = await _findById(rid);
+	const { rid } = req.params;
+	const result = await Result.findById(rid);
 
 	if (!result.owner.equals(req.user._id)) {
-		res.status(403).end();
+		res.status(401).end();
 	}
+
 	next();
 }

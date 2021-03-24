@@ -8,10 +8,10 @@ FingerChips is a modern website for taking and recording Typing Tests.
 ![Profile](https://i.imgur.com/e0bpXzs.png)
 
 
-This UI is currently heavily inspired by [typings.gg](typings.gg).
+This UI is currently heavily inspired by [typings.gg](https://typings.gg/).
 This will change in the future.
 
-[Live on Heroku](https://finger-chips.herokuapp.com/ "Live on Heroku")
+[Live on Heroku](https://fingerchips.herokuapp.com/ "Live on Heroku")
 
 ------------
 

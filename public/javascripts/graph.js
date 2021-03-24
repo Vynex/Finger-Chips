@@ -58,7 +58,7 @@ const options = {
 const chart = new ApexCharts(document.querySelector('#history'), options);
 chart.render();
 
-// Updating wordCount
+// For Updating wordCount
 for (let control of controls) {
 	control.addEventListener('click', () => {
 		wordCount = Number(control.textContent);

@@ -33,3 +33,30 @@ footer {
    font-weight: 200;
    text-align: center;
 }
+
+button {
+   margin-top: 0.8em;
+   margin-bottom: 0.3em;
+   border: none;
+   padding: 0.2em 0.7em;
+   border-radius: 0.2rem;
+   font-size: 1.2rem;
+
+   background-color: #282A36;
+   color: #BB92E4;
+
+   font: inherit;
+   font-size: inherit;
+   cursor: pointer;
+}
+
+.container-bottom {
+   font-size: 0.9em;
+   display: flex;
+   justify-content: flex-end;
+   color: #FF79C6;
+}
+
+.container-bottom>a {
+   margin: 0 0.3em;
+}

@@ -17,12 +17,16 @@ export async function create(req, res) {
 }
 
 export async function destroy(req, res) {
-	const { id, rid } = req.params;
+	const id = req.user._id;
+	const { rid } = req.params;
+
+	console.log('id', id);
+	console.log('rid', rid);
 
 	await User.findByIdAndUpdate(id, { $pull: { results: rid } });
-   await Result.findByIdAndDelete(rid);
+	await Result.findByIdAndDelete(rid);
 
-   res.status(204).send('deleted');
+	res.status(204).send('deleted');
 }
 
 export async function showData(req, res) {
@@ -35,8 +39,10 @@ export async function showData(req, res) {
 }
 
 export function renderProfile(req, res) {
-	if (req.user)
-		res.render('profile/graph');
-	else
-		res.redirect('/login');
+	if (req.user) res.render('profile/graph');
+	else res.redirect('/login');
+}
+
+export function renderHistory(req, res) {
+	res.render('profile/history');
 }

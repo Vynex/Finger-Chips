@@ -32,3 +32,58 @@ main {
 .control {
    cursor: pointer;
 }
+
+ul {
+   list-style: none;
+   margin: 1em;
+   /* width: 100%; */
+}
+li {
+   margin: 0.4em;
+}
+
+.date {
+   color: #878ba6;
+}
+
+input[type=checkbox] {
+   position: absolute;
+   opacity: 0;
+}
+
+input[type=checkbox] + label {
+   position: relative;
+   cursor: pointer;
+   padding: 0;
+}
+
+input[type=checkbox] + label:before {
+   content: "";
+   margin-right: 10px;
+   display: inline-block;
+   vertical-align: text-top;
+   width: 1.2em;
+   height: 1.2em;
+   background: #282A36;
+   border-radius: 0.2em;
+}
+
+input[type=checkbox]:hover + label:before {
+   background: #303341;
+}
+
+input[type=checkbox]:checked + label:before {
+   background: #303341;
+}
+
+input[type=checkbox]:checked + label:after {
+   content: "";
+   position: absolute;
+   left: 5px;
+   top: 9px;
+   background: #F8F8F2;
+   width: 2px;
+   height: 2px;
+   box-shadow: 2px 0 0 #F8F8F2, 4px 0 0 #F8F8F2, 4px -2px 0 #F8F8F2, 4px -4px 0 #F8F8F2, 4px -6px 0 #F8F8F2, 4px -8px 0 #F8F8F2;
+   transform: rotate(45deg);
+}

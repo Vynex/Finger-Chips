@@ -1,6 +1,7 @@
 import User from '../models/user.js';
 
 export function registerForm(req, res) {
+	if (req.user) return res.redirect('/');
 	res.render('users/register');
 }
 
@@ -19,6 +20,7 @@ export async function register(req, res) {
 }
 
 export function loginForm(req, res) {
+	if (req.user) return res.redirect('/');
 	res.render('users/login');
 }
 
