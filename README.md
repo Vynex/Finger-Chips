@@ -8,8 +8,7 @@
 ![Profile](https://i.imgur.com/e0bpXzs.png)
 
 
-This UI is currently heavily inspired by [typings.gg](https://typings.gg/).
-This will change in the future.
+This UI is currently inspired by [typings.gg](https://typings.gg/).
 
 [Live on Heroku](https://fingerchips.herokuapp.com/ "Live on Heroku")
 
