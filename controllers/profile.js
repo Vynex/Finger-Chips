@@ -20,9 +20,6 @@ export async function destroy(req, res) {
 	const id = req.user._id;
 	const { rid } = req.params;
 
-	console.log('id', id);
-	console.log('rid', rid);
-
 	await User.findByIdAndUpdate(id, { $pull: { results: rid } });
 	await Result.findByIdAndDelete(rid);
 

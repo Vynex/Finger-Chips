@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,17 +9,19 @@
 
    <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
+
 <body>
    <header>
       <div class="title">finger chips / <%= err.message %></div>
    </header>
-   
+
    <main>
 
       <% if (process.env.NODE_ENV !== 'production') { %>
-         <div><%= err.stack %></div>
+      <div><%= err.stack %></div>
       <% } %>
 
    </main>
 </body>
+
 </html>

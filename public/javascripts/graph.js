@@ -81,7 +81,7 @@ const updateGraph = (data) => {
 	const WPMs = data.map((x) => x.wpm);
 	const ACCs = data.map((x) => x.acc);
 
-   const series = [
+	const series = [
 		{
 			name: 'Words per Minute',
 			data: WPMs,
@@ -93,7 +93,7 @@ const updateGraph = (data) => {
 	];
 
 	chart.updateSeries(series);
-   chart.updateOptions({
+	chart.updateOptions({
 		xaxis: {
 			categories: dates,
 			labels: {

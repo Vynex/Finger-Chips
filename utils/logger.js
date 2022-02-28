@@ -3,5 +3,5 @@ export const info = (...params) => {
 };
 
 export const error = (...params) => {
-   console.log(params);
+   console.error(params);
 };

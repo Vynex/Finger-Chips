@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,6 +12,7 @@
    <script src="/javascripts/app.js" defer></script>
    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" defer></script>
 </head>
+
 <body>
    <header>
       <div class="title">finger chips</div>
@@ -19,9 +21,9 @@
    <main>
       <div class="controls">
          <span class="control-start">
-            <span class="control">10</span> / 
-            <span class="control">25</span> / 
-            <span class="control selected-count">50</span> / 
+            <span class="control">10</span> /
+            <span class="control">25</span> /
+            <span class="control selected-count">50</span> /
             <span class="control">100</span> /
             <span class="control">250</span>
          </span>
@@ -59,13 +61,14 @@
    </footer>
 
    <% if (currentUser) {%>
-      <script>
-         const user = '<%- currentUser.id %>';
-      </script>
+   <script>
+      const user = '<%- currentUser.id %>';
+   </script>
    <% } else { %>
-      <script>
-         const user = null;
-      </script>
+   <script>
+      const user = null;
+   </script>
    <% } %>
 </body>
+
 </html>

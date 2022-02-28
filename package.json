@@ -12,7 +12,6 @@
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.1",
-    "connect-flash": "^0.1.1",
     "connect-mongo": "^4.4.0",
     "dotenv": "^8.2.0",
     "ejs": "^3.1.6",

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,8 +9,8 @@
 
    <link rel="stylesheet" href="/stylesheets/style.css">
    <link rel="stylesheet" href="/stylesheets/auth.css">
-   <script src="/javascripts/validate.js" defer></script>
 </head>
+
 <body>
    <header>
       <div class="title">finger chips / register</div>
@@ -25,8 +26,8 @@
             <input type="email" class="field" id="email" name="email" />
 
             <label for="password">password</label>
-            <!-- <input type="password" class="field" id="password" name="password" pattern="^(?:(?=.*?[A-Z])(?:(?=.*?[0-9])(?=.*?[-!@#$%^&*()_[\]{},.<>+=])|(?=.*?[a-z])(?:(?=.*?[0-9])|(?=.*?[-!@#$%^&*()_[\]{},.<>+=])))|(?=.*?[a-z])(?=.*?[0-9])(?=.*?[-!@#$%^&*()_[\]{},.<>+=]))[A-Za-z0-9!@#$%^&*()_[\]{},.<>+=-]{6,30}$" /> -->
-            <input type="password" class="field" id="password" name="password" minlength="6" maxlength="30" />
+            <input type="password" class="field" id="password" name="password"
+               pattern="^(?=.*[a-z])(?=.*\d)[a-zA-Z\d\w\W]{6,}$" />
 
             <label for="repeat-password">repeat password</label>
             <input type="password" class="field" id="repeat-password" name="repeat_password" />
@@ -45,4 +46,5 @@
       </div>
    </footer>
 </body>
+
 </html>

@@ -7,15 +7,14 @@ export function registerForm(req, res) {
 
 export async function register(req, res) {
 	try {
-		const { email, username, password, repeat_password } = req.body;
-		const user = new User({ email, username, password, repeat_password });
+		const { email, username, password } = req.body;
+
+		const user = new User({ email, username, password });
 		await user.save();
 
-		req.flash('success', 'welcome');
-		res.redirect('/');
+		return res.redirect('/login');
 	} catch (err) {
-		req.flash('error', err.message);
-		res.redirect('/register');
+		return res.redirect('/register');
 	}
 }
 
@@ -25,8 +24,6 @@ export function loginForm(req, res) {
 }
 
 export function login(req, res) {
-	req.flash('success', `welcome back ${req.user.username}`);
-
 	const redirectUrl = req.session.returnTo || '/';
 	delete req.session.returnTo;
 	res.redirect(redirectUrl);
@@ -34,7 +31,5 @@ export function login(req, res) {
 
 export function logout(req, res) {
 	req.logout();
-
-	req.flash('success', 'signed out');
 	res.redirect('/');
 }

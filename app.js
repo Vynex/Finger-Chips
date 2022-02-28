@@ -1,9 +1,23 @@
 import { dbURL } from './configs/config.js';
 import { info, error } from './utils/logger.js';
 import express from 'express';
-const app = express();
 
 import mongoose from 'mongoose';
+
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+import favicon from 'serve-favicon';
+
+import session from 'express-session';
+import MongoStore from 'connect-mongo';
+import passport from './configs/passport.js';
+import HandledError from './utils/HandledError.js';
+
+import authRoutes from './routes/auth.js';
+import profileRoutes from './routes/profile.js';
+
+const app = express();
 
 mongoose.connect(dbURL, {
 	useNewUrlParser: true,
@@ -12,24 +26,18 @@ mongoose.connect(dbURL, {
 	useCreateIndex: true,
 });
 
-mongoose.connection.on('error', error.bind(console, 'Mongoose Connection Erorr, '));
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+mongoose.connection.on(
+	'error',
+	error.bind(console, 'Mongoose Connection Error, ')
+);
 mongoose.connection.once('open', () => {
 	info('Connection to the Database Established');
 });
 
-import path from 'path';
-import { fileURLToPath } from 'url';
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-import favicon from 'serve-favicon';
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-
-import flash from 'connect-flash';
-import session from 'express-session';
-import MongoStore from 'connect-mongo';
-import passport from './configs/passport.js';
-import HandledError from './utils/HandledError.js';
 
 app.set('view engine', 'ejs');
 app.set('static', path.join(__dirname, 'public'));
@@ -37,7 +45,6 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
-app.use(flash());
 
 const secret = process.env.SESSION_SECRET || 'secret';
 const sessionConfig = {
@@ -63,13 +70,8 @@ app.use(passport.session());
 
 app.use((req, res, next) => {
 	res.locals.currentUser = req.user;
-	res.locals.success = req.flash('success');
-	res.locals.error = req.flash('error');
 	next();
 });
-
-import authRoutes from './routes/auth.js';
-import profileRoutes from './routes/profile.js';
 
 app.get('/', (req, res) => {
 	res.render('home');
@@ -79,12 +81,12 @@ app.use('/', authRoutes);
 app.use('/profile', profileRoutes);
 
 app.all('*', (req, res, next) => {
-	next(new HandledError(404, 'resource not found'));
+	next(new HandledError(404, 'Resource not Found'));
 });
 
 app.use((err, req, res, next) => {
 	const { status = 500 } = err;
-	if (!err.message) err.message = 'something went wrong..';
+	if (!err.message) err.message = 'Something Went Wrong';
 	res.status(status).render('error', { err });
 });
 

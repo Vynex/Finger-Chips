@@ -12,7 +12,7 @@ deleteBtn.addEventListener('click', () => {
 	}
 });
 
-// Fetch DELETE
+// Delete a Result from History
 const destroy = async (id) => {
 	const res = await fetch(`/profile/results/${result.value}`, {
 		method: 'DELETE',
@@ -24,7 +24,7 @@ const destroy = async (id) => {
 	initialise(wordCount);
 };
 
-// Updating wordCount
+// Setting Number of Words
 for (let control of controls) {
 	control.addEventListener('click', () => {
 		wordCount = Number(control.textContent);
@@ -35,7 +35,7 @@ for (let control of controls) {
 	});
 }
 
-// Fetch and Render Data
+// Fetch and Render History
 const initialise = async (wordCount) => {
 	const res = await fetch(
 		'/profile/results?' + new URLSearchParams({ wordCount: wordCount }),
@@ -89,7 +89,6 @@ const showData = (data) => {
 
 		list.appendChild(newLi);
 	}
-
 };
 
 initialise(wordCount);
